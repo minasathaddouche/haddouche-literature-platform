@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   const styleLink=document.querySelector('link[href*="style.css"]');
   if(styleLink){
     const u=new URL(styleLink.href,location.href);
-    u.searchParams.set("v","20260926-cardcolors1");
+    u.searchParams.set("v","20260926-algeriamemory1");
     styleLink.href=u.toString();
   }
   // الشعار الرسمي للمنصة
