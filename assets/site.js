@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   const styleLink=document.querySelector('link[href*="style.css"]');
   if(styleLink){
     const u=new URL(styleLink.href,location.href);
-    u.searchParams.set("v","20260926-growth2");
+    u.searchParams.set("v","20260926-footerblue1");
     styleLink.href=u.toString();
   }
   // الشعار الرسمي للمنصة
