@@ -781,3 +781,8 @@ footer p,footer a,footer small{font-size:.92rem;line-height:1.75}
   color:#FFFFFF!important;
   border-color:#5F1620!important;
 }
+
+/* اقرأ واكتشف بالأحمر الفاتح */
+.feature-card .eyebrow{
+  color:#D9534F!important;
+}
