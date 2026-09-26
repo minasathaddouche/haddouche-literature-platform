@@ -914,3 +914,30 @@ main > section:nth-of-type(3) .category:hover strong{
   backdrop-filter:blur(2px);
   -webkit-backdrop-filter:blur(2px);
 }
+
+
+/* التذييل بالأزرق المستوحى من الخلفية المختارة */
+footer{
+  background:linear-gradient(135deg,#005FAF 0%,#0077C6 52%,#0089D6 100%)!important;
+  color:#FFFFFF!important;
+  border-top:7px solid #F2C94C!important;
+  box-shadow:0 -8px 24px rgba(0,75,140,.16)!important;
+}
+footer h3,
+footer strong,
+footer p,
+footer small,
+footer a,
+footer .copyright{
+  color:#FFFFFF!important;
+}
+footer a:hover{
+  color:#F2C94C!important;
+}
+footer .copyright{
+  border-top:1px solid rgba(255,255,255,.30)!important;
+}
+footer .footer-logo{
+  background:#FFFFFF!important;
+  border-color:#F2C94C!important;
+}
