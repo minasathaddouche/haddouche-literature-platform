@@ -971,3 +971,19 @@ footer .footer-logo{
 .platform-indexes .category{
   background:#FFFFFF!important;
 }
+
+
+/* ألوان بطاقات أبواب المنصة والفهارس */
+.platform-doors .category{
+  background:#FFFDF8!important;
+}
+.platform-doors .category:hover{
+  background:#FFF5DE!important;
+}
+
+.platform-indexes .category{
+  background:#F9FCFF!important;
+}
+.platform-indexes .category:hover{
+  background:#EAF6FC!important;
+}
