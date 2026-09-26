@@ -4,7 +4,7 @@ layout: null
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>{{ site.url }}{{ site.baseurl }}/</loc></url>
-  {% assign static_pages = "categories.html,series.html,about.html,submissions.html,search.html,writers.html,countries.html,topics.html,latest.html,series/ala-hafat-al-adab.html,series/ghuraf.html" | split: "," %}
+  {% assign static_pages = "categories.html,series.html,about.html,submissions.html,search.html,writers.html,countries.html,topics.html,latest.html,series/ala-hafat-al-adab.html,series/ghuraf.html,categories/algeria-memory.html" | split: "," %}
   {% for p in static_pages %}<url><loc>{{ site.url }}{{ site.baseurl }}/{{ p }}</loc></url>{% endfor %}
   {% for w in site.writers %}<url><loc>{{ site.url }}{{ site.baseurl }}{{ w.url }}</loc></url>{% endfor %}
   {% for a in site.articles %}{% if a.published != false %}<url><loc>{{ site.url }}{{ site.baseurl }}{{ a.url }}</loc><lastmod>{{ a.date | date: "%Y-%m-%d" }}</lastmod></url>{% endif %}{% endfor %}
