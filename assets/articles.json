@@ -19,6 +19,7 @@
         {% when "الفكر والتأمل" %}"thought"
         {% when "الثقافة" %}"culture"
         {% when "من ذاكرة الجزائر" %}"algeria-memory"
+        {% when "أدب الأطفال" %}"children-literature"
         {% else %}"other"
       {% endcase %}
     ],
