@@ -786,3 +786,8 @@ footer p,footer a,footer small{font-size:.92rem;line-height:1.75}
 .feature-card .eyebrow{
   color:#D9534F!important;
 }
+
+/* عناوين جديد المنصة واختيار المنصة بالأحمر الفاتح */
+.home-live .eyebrow{
+  color:#D9534F!important;
+}
