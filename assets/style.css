@@ -894,3 +894,8 @@ main > section:nth-of-type(3) .category strong{
 main > section:nth-of-type(3) .category:hover strong{
   color:#7A1F2B!important;
 }
+
+/* خلفية الواجهة بالأزرق السماوي الهادئ */
+.hero{
+  background:linear-gradient(135deg,#F8FCFE 0%,#DDEFF7 55%,#EAF5FA 100%)!important;
+}
