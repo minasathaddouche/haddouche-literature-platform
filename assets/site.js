@@ -37,6 +37,11 @@ document.addEventListener("DOMContentLoaded",()=>{
       brand.prepend(logo);
     }
   }
+  const brandStrong=brand?.querySelector("strong");
+  const brandSmall=brand?.querySelector("small");
+  if(brandStrong)brandStrong.textContent="منصة بومدين حدوش";
+  if(brandSmall)brandSmall.textContent="للأدب والثقافة";
+
   let btn=nav.querySelector(".menu-btn");
   if(!btn){btn=document.createElement("button");btn.className="menu-btn";btn.type="button";btn.setAttribute("aria-label","القائمة");btn.textContent="☰";brand?.after(btn)}
   let links=nav.querySelector(".links");
