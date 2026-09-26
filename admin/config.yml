@@ -3,12 +3,12 @@ backend:
   turbo_site_id: 993612ee-0298-4a11-9fb2-42de593843d5
   branch: main
 
-site_url: https://sociologue74-collab.github.io/haddouche-literature-platform/
-display_url: https://sociologue74-collab.github.io/haddouche-literature-platform/
+site_url: https://minasathaddouche.github.io/haddouche-literature-platform/
+display_url: https://minasathaddouche.github.io/haddouche-literature-platform/
 
 media_folder: "assets/uploads"
 public_folder: "/haddouche-literature-platform/assets/uploads"
-logo_url: https://sociologue74-collab.github.io/haddouche-literature-platform/
+logo_url: https://minasathaddouche.github.io/haddouche-literature-platform/
 
 locale: ar
 publish_mode: simple
