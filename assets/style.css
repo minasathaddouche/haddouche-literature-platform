@@ -769,3 +769,15 @@ footer p,footer a,footer small{font-size:.92rem;line-height:1.75}
 .brand small{
   color:#C99700!important;
 }
+
+/* زر شروط النشر في الهيدر */
+.cta{
+  background:#7A1F2B!important;
+  color:#FFFFFF!important;
+  border-color:#7A1F2B!important;
+}
+.cta:hover{
+  background:#5F1620!important;
+  color:#FFFFFF!important;
+  border-color:#5F1620!important;
+}
