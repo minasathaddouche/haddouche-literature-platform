@@ -749,3 +749,12 @@ footer p,footer a,footer small{font-size:.92rem;line-height:1.75}
   .share-label{grid-column:1/-1}
   .share button{width:100%}
 }
+
+/* هوية اسم المنصة الجديدة */
+.hero h1{
+  color:#0b2d5c!important;
+}
+.brand strong,
+.brand small{
+  color:#0b2d5c!important;
+}
