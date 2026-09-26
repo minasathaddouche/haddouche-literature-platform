@@ -956,3 +956,18 @@ footer .footer-logo{
   background:linear-gradient(rgba(255,255,255,.18),rgba(255,255,255,.18)),url("/haddouche-literature-platform/assets/hero-wave-bg.svg") center/cover no-repeat!important;
   background-color:#eef9fd!important;
 }
+
+
+/* خلفيات أبواب المنصة والفهارس */
+.platform-doors{
+  background:#F8F6EF!important;
+  position:relative;
+}
+.platform-indexes{
+  background:#EEF6FB!important;
+  position:relative;
+}
+.platform-doors .category,
+.platform-indexes .category{
+  background:#FFFFFF!important;
+}
