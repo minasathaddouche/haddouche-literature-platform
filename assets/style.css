@@ -899,3 +899,18 @@ main > section:nth-of-type(3) .category:hover strong{
 .hero{
   background:linear-gradient(135deg,#F8FCFE 0%,#DDEFF7 55%,#EAF5FA 100%)!important;
 }
+
+
+/* خلفية هادئة لقسم أحدث النصوص ونص مختار */
+.home-live{
+  background:linear-gradient(90deg,#EEF0A0 0%,#CBE7A8 45%,#9ADDD8 100%)!important;
+  padding:42px 0!important;
+  border-top:1px solid rgba(201,151,0,.18)!important;
+  border-bottom:1px solid rgba(201,151,0,.18)!important;
+}
+.home-live .featured-article,
+.home-live .latest-mini-card{
+  background:rgba(255,255,255,.94)!important;
+  backdrop-filter:blur(2px);
+  -webkit-backdrop-filter:blur(2px);
+}
