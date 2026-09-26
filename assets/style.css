@@ -752,9 +752,16 @@ footer p,footer a,footer small{font-size:.92rem;line-height:1.75}
 
 /* هوية اسم المنصة الجديدة */
 .hero h1{
-  color:#0b2d5c!important;
+  color:#1D4ED8!important;
 }
 .brand strong,
 .brand small{
-  color:#0b2d5c!important;
+  color:#1D4ED8!important;
+}
+
+/* الأزرق الملكي للهوية */
+.hero h1,
+.brand strong,
+.brand small{
+  color:#1D4ED8!important;
 }
