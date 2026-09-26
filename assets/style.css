@@ -791,3 +791,8 @@ footer p,footer a,footer small{font-size:.92rem;line-height:1.75}
 .home-live .eyebrow{
   color:#D9534F!important;
 }
+
+/* عناوين أحدث النصوص ونص مختار بالأخضر الداكن */
+.home-live .section-head h2{
+  color:#1F5E3B!important;
+}
