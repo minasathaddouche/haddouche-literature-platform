@@ -796,3 +796,89 @@ footer p,footer a,footer small{font-size:.92rem;line-height:1.75}
 .home-live .section-head h2{
   color:#1F5E3B!important;
 }
+
+/* فهرس الكتّاب بالصور */
+.writers-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+  margin-top:28px;
+}
+.writer-index-card{
+  display:grid;
+  grid-template-columns:112px minmax(0,1fr);
+  gap:20px;
+  align-items:center;
+  background:#fff;
+  border:1px solid var(--line);
+  border-top:4px solid var(--yellow);
+  border-radius:22px;
+  padding:22px;
+  box-shadow:var(--shadow-soft);
+  transition:.22s ease;
+}
+.writer-index-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow);
+  border-color:var(--yellow);
+}
+.writer-index-photo,
+.writer-index-fallback{
+  width:96px;
+  height:118px;
+  border-radius:18px;
+  border:3px solid var(--yellow);
+  background:#fff;
+  box-shadow:0 8px 20px rgba(11,31,58,.10);
+}
+.writer-index-photo{
+  object-fit:cover;
+  object-position:center 14%;
+  display:block;
+}
+.writer-index-fallback{
+  display:grid;
+  place-items:center;
+  background:var(--navy);
+  color:var(--yellow);
+  font-size:2rem;
+  font-weight:900;
+}
+.writer-index-content{min-width:0}
+.writer-index-content h3{
+  margin:.35rem 0 .45rem;
+  color:var(--navy);
+  font-size:1.35rem;
+  line-height:1.4;
+}
+.writer-index-content p{
+  margin:0 0 .75rem;
+  color:#475467!important;
+  font-size:.94rem;
+  line-height:1.75;
+}
+.writer-index-content p strong{color:var(--burgundy)}
+@media(max-width:850px){
+  .writers-grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .writer-index-card{
+    grid-template-columns:82px minmax(0,1fr);
+    gap:14px;
+    padding:17px;
+  }
+  .writer-index-photo,
+  .writer-index-fallback{
+    width:74px;
+    height:92px;
+    border-radius:15px;
+  }
+  .writer-index-content h3{font-size:1.12rem}
+  .writer-index-content p{
+    font-size:.86rem;
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+}
