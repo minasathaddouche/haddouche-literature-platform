@@ -882,3 +882,15 @@ footer p,footer a,footer small{font-size:.92rem;line-height:1.75}
     overflow:hidden;
   }
 }
+
+/* ألوان قسم أبواب المنصة */
+main > section:nth-of-type(3) .eyebrow,
+main > section:nth-of-type(3) .section-head h2{
+  color:#1F5E3B!important;
+}
+main > section:nth-of-type(3) .category strong{
+  color:#B0303B!important;
+}
+main > section:nth-of-type(3) .category:hover strong{
+  color:#7A1F2B!important;
+}
