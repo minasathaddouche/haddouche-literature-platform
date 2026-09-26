@@ -760,8 +760,12 @@ footer p,footer a,footer small{font-size:.92rem;line-height:1.75}
 }
 
 /* الأزرق الملكي للهوية */
-.hero h1,
+.hero h1{
+  color:#1D4ED8!important;
+}
+
+/* الاسم الذهبي في الهيدر */
 .brand strong,
 .brand small{
-  color:#1D4ED8!important;
+  color:#C99700!important;
 }
