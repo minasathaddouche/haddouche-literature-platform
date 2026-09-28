@@ -11,7 +11,7 @@ public_folder: "/haddouche-literature-platform/assets/uploads"
 logo_url: https://minasathaddouche.github.io/haddouche-literature-platform/
 
 locale: ar
-publish_mode: simple
+publish_mode: editorial_workflow
 
 slug:
   encoding: ascii
