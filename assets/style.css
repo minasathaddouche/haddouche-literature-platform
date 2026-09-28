@@ -1230,3 +1230,47 @@ footer .footer-logo{
     min-height:126px;
   }
 }
+
+
+/* ===== بطاقات الفهارس بالذهبي الداكن ===== */
+.platform-indexes .category{
+  position:relative;
+  overflow:hidden;
+  text-align:right;
+  justify-content:flex-end;
+  min-height:150px;
+  background:linear-gradient(145deg,#C89B2C 0%,#B8891E 100%)!important;
+  border:1px solid #9A7115!important;
+  border-top:1px solid #9A7115!important;
+  color:#111!important;
+  box-shadow:0 12px 26px rgba(120,88,17,.14);
+}
+.platform-indexes .category:before{
+  content:"";
+  position:absolute;
+  top:0;right:0;
+  width:42px;height:3px;
+  background:#0b1f3a;
+}
+.platform-indexes .category strong{
+  color:#0b1f3a!important;
+  font-size:1.08rem;
+}
+.platform-indexes .category span{
+  color:#2d2a22!important;
+}
+.platform-indexes .category:hover{
+  transform:translateY(-4px);
+  background:linear-gradient(145deg,#D6AB3C 0%,#C89B2C 100%)!important;
+  border-color:#0b1f3a!important;
+  box-shadow:0 16px 34px rgba(120,88,17,.20);
+}
+.platform-indexes .category:hover strong{
+  color:#07162a!important;
+}
+
+@media(max-width:520px){
+  .platform-indexes .category{
+    min-height:122px;
+  }
+}
