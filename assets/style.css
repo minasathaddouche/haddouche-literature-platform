@@ -1274,3 +1274,34 @@ footer .footer-logo{
     min-height:122px;
   }
 }
+
+
+/* ===== بطاقة اقرأ واكتشف بالأزرق الغامق ===== */
+.feature-card{
+  background:linear-gradient(145deg,#0B1F3A 0%,#102B4C 100%)!important;
+  color:#FFFFFF!important;
+  border:1px solid rgba(242,201,76,.35)!important;
+  border-top:4px solid #C89B2C!important;
+  box-shadow:0 14px 30px rgba(11,31,58,.18)!important;
+}
+.feature-card .eyebrow{
+  color:#E2C36B!important;
+}
+.feature-card .eyebrow:before{
+  background:#C89B2C!important;
+}
+.feature-card h2{
+  color:#FFFFFF!important;
+}
+.feature-card p{
+  color:#D7DEE8!important;
+}
+.feature-card .btn.primary{
+  background:#C89B2C!important;
+  color:#0B1F3A!important;
+  border-color:#C89B2C!important;
+}
+.feature-card .btn.primary:hover{
+  background:#D6AB3C!important;
+  border-color:#D6AB3C!important;
+}
