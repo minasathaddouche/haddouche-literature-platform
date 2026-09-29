@@ -12,11 +12,12 @@ let ISLAMIC_ITEMS=[];
 function renderIslamic(filter=""){
  const box=document.getElementById("category-results");
  const list=ISLAMIC_ITEMS.filter(a=>!filter || a.islamic_section===filter);
+ const readersCard=filter==="القرآن الكريم" ? '<div class="reader-library-callout"><a class="card reader-library-card" href="quran-readers.html"><span class="tag">صوتيات القرآن</span><h3>مكتبة القرّاء</h3><p>استمع إلى تلاوات مختارة لعدد من القرّاء، مع روابط موثوقة للاستماع إلى المصاحف الصوتية.</p><span class="read-more">دخول المكتبة ←</span></a></div>' : '';
  if(!list.length){
-   box.innerHTML='<div class="empty-state">'+(filter?'لا توجد مواد منشورة في فرع «'+filter+'» بعد.':'لا توجد مواد منشورة في هذا القسم بعد. ستظهر هنا تلقائيًا عند نشر أول مادة في الثقافة الإسلامية.')+'</div>';
+   box.innerHTML=readersCard+'<div class="empty-state">'+(filter?'لا توجد مواد منشورة في فرع «'+filter+'» بعد.':'لا توجد مواد منشورة في هذا القسم بعد. ستظهر هنا تلقائيًا عند نشر أول مادة في الثقافة الإسلامية.')+'</div>';
    return;
  }
- box.innerHTML='<div class="grid">'+list.map(a=>'<a class="card" href="../articles/'+a.slug+'/index.html"><span class="tag">'+(a.islamic_section||a.category)+'</span><h3>'+a.title+'</h3><p>'+a.excerpt+'</p><div class="meta"><span>'+a.author+'</span></div></a>').join('')+'</div>';
+ box.innerHTML=readersCard+'<div class="grid">'+list.map(a=>'<a class="card" href="../articles/'+a.slug+'/index.html"><span class="tag">'+(a.islamic_section||a.category)+'</span><h3>'+a.title+'</h3><p>'+a.excerpt+'</p><div class="meta"><span>'+a.author+'</span></div></a>').join('')+'</div>';
 }
 fetch("../assets/articles.json").then(r=>r.json()).then(items=>{
  ISLAMIC_ITEMS=items.filter(a=>(a.genres||[]).includes(GENRE));
