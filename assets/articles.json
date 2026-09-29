@@ -17,6 +17,7 @@
         {% when "المقال الأدبي" %}"literary-article"
         {% when "النقد الأدبي" %}"literary-criticism"
         {% when "الفكر والتأمل" %}"thought"
+        {% when "الإنسان والمجتمع" %}"thought"
         {% when "الثقافة" %}"culture"
         {% when "الثقافة الإسلامية" %}"islamic-culture"
         {% when "من ذاكرة الجزائر" %}"algeria-memory"
