@@ -9,6 +9,7 @@
     "author": {{ a.author | default: "" | jsonify }},
     "country": {{ a.country | default: "" | jsonify }},
     "category": {{ a.category | default: "" | jsonify }},
+    "islamic_section": {{ a.islamic_section | default: "" | jsonify }},
     "genres": [
       {% case a.category %}
         {% when "الشعر" %}"poetry"
