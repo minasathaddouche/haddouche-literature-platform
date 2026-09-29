@@ -49,6 +49,17 @@ collections:
           - "الثقافة الإسلامية"
           - "من ذاكرة الجزائر"
           - "أدب الأطفال"
+      - label: "فرع الثقافة الإسلامية"
+        name: "islamic_section"
+        widget: "select"
+        required: false
+        options:
+          - "القرآن الكريم"
+          - "الحديث النبوي"
+          - "المقالات"
+          - "القصص"
+          - "دروس وعِبَر"
+        hint: "يُستخدم فقط عندما يكون القسم: الثقافة الإسلامية."
       - {label: "السلسلة", name: "series", widget: "string", required: false}
       - {label: "تاريخ النشر", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false}
       - {label: "مقتطف", name: "excerpt", widget: "text"}
