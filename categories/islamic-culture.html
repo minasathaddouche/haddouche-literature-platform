@@ -12,7 +12,7 @@ let ISLAMIC_ITEMS=[];
 function renderIslamic(filter=""){
  const box=document.getElementById("category-results");
  const list=ISLAMIC_ITEMS.filter(a=>!filter || a.islamic_section===filter);
- const readersCard=filter==="القرآن الكريم" ? '<div class="reader-library-callout"><a class="card reader-library-card" href="quran-readers.html"><span class="tag">صوتيات القرآن</span><h3>مكتبة القرّاء</h3><p>استمع إلى تلاوات مختارة لعدد من القرّاء، مع روابط موثوقة للاستماع إلى المصاحف الصوتية.</p><span class="read-more">دخول المكتبة ←</span></a></div>' : '';
+ const readersCard=filter==="القرآن الكريم" ? '<div class="reader-library-callout"><a class="card reader-library-card" href="quran-readers.html"><span class="tag">صوتيات القرآن</span><h3>تلاوات مختارة</h3><p>استمع إلى تلاوات مختارة لعدد من القرّاء، مع روابط موثوقة للاستماع إلى المصاحف الصوتية.</p><span class="read-more">استمع الآن ←</span></a></div>' : '';
  if(!list.length){
    box.innerHTML=readersCard+'<div class="empty-state">'+(filter?'لا توجد مواد منشورة في فرع «'+filter+'» بعد.':'لا توجد مواد منشورة في هذا القسم بعد. ستظهر هنا تلقائيًا عند نشر أول مادة في الثقافة الإسلامية.')+'</div>';
    return;
