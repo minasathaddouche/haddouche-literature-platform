@@ -1,14 +1,17 @@
 ---
+excerpt: "يقضي الإنسان حياته محاسبًا على أمواله، بينما يتفلّت بين يديه أغلى ما
+  يملك: الزمن. تأمل في العمر والغبن ومفارقة الوقت الذي توفره الأدوات وتستهلكه
+  الحياة."
 layout: article
+title: رأس المال الذي لا يُعوَّض
+slug: ras-al-mal-alladhi-la-yuawwad
+author: بومدين حدوش
 permalink: /articles/ras-al-mal-alladhi-la-yuawwad/index.html
-title: "رأس المال الذي لا يُعوَّض"
-slug: "ras-al-mal-alladhi-la-yuawwad"
-author: "بومدين حدوش"
-country: "الجزائر"
-category: "المقال الأدبي"
-series: "على حافة الأدب"
-date: "2026-09-26"
-excerpt: "يقضي الإنسان حياته محاسبًا على أمواله، بينما يتفلّت بين يديه أغلى ما يملك: الزمن. تأمل في العمر والغبن ومفارقة الوقت الذي توفره الأدوات وتستهلكه الحياة."
+country: الجزائر
+category: المقال الأدبي
+series: على حافة الأدب
+date: 2026-09-26
+featured: true
 tags:
   - على حافة الأدب
   - الزمن
