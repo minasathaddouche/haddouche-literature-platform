@@ -20,9 +20,12 @@ function renderIslamic(filter=""){
 }
 fetch("../assets/articles.json").then(r=>r.json()).then(items=>{
  ISLAMIC_ITEMS=items.filter(a=>(a.genres||[]).includes(GENRE));
- renderIslamic();
- document.querySelectorAll(".islamic-branches [data-filter]").forEach(a=>a.addEventListener("click",()=>{
+ const box=document.getElementById("category-results");
+ box.innerHTML="";
+ document.querySelectorAll(".islamic-branches [data-filter]").forEach(a=>a.addEventListener("click",(e)=>{
+   e.preventDefault();
    renderIslamic(a.dataset.filter);
+   document.getElementById("islamic-content").scrollIntoView({behavior:"smooth",block:"start"});
  }));
 });
 </script></main><footer><div class="container"><div class="copyright">© 2026 منصة بومدين حدوش للأدب والثقافة — جميع الحقوق محفوظة.</div></div></footer><script src="../assets/site.js"></script></body></html>
