@@ -1316,3 +1316,24 @@ footer .footer-logo{
 .platform-doors .islamic-culture-card strong{color:#F4E3A6!important}
 .platform-doors .islamic-culture-card span{color:#E6ECE8!important}
 .platform-doors .islamic-culture-card:hover{border-color:#C89B2C!important;box-shadow:0 16px 34px rgba(13,47,35,.24)!important}
+
+
+/* بطاقات فروع الثقافة الإسلامية: رمادي فاتح */
+.islamic-branches .category{
+  background:#F1F3F5!important;
+  border:1px solid #D6DADE!important;
+  border-top:3px solid #C89B2C!important;
+  color:#0B1F3A!important;
+  box-shadow:0 10px 22px rgba(11,31,58,.06)!important;
+}
+.islamic-branches .category strong{
+  color:#0B1F3A!important;
+}
+.islamic-branches .category span{
+  color:#5F6670!important;
+}
+.islamic-branches .category:hover{
+  background:#E7EAEE!important;
+  border-color:#C89B2C!important;
+  transform:translateY(-3px);
+}
