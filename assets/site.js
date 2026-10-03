@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded",()=>{
   if(!favicon){
     favicon=document.createElement("link");
     favicon.rel="icon";
-    favicon.type="image/jpeg";
+    favicon.type="image/png";
     document.head.appendChild(favicon);
   }
-  favicon.href=BASE+"/assets/haddouche-logo.jpg?v=20260926-logo1";
+  favicon.href=BASE+"/assets/boumediene-haddouche-logo.png?v=20261003-logo3";
 
   const nav=document.querySelector("nav");
   if(!nav)return;
@@ -26,14 +26,14 @@ document.addEventListener("DOMContentLoaded",()=>{
     if(oldMark){
       const logo=document.createElement("img");
       logo.className="brand-logo";
-      logo.src=BASE+"/assets/haddouche-logo.jpg?v=20260926-logo1";
-      logo.alt="شعار منصة حدوش للأدب والثقافة";
+      logo.src=BASE+"/assets/boumediene-haddouche-logo.png?v=20261003-logo3";
+      logo.alt="شعار منصة بومدين حدوش للأدب والثقافة";
       oldMark.replaceWith(logo);
     } else if(!brand.querySelector(".brand-logo")){
       const logo=document.createElement("img");
       logo.className="brand-logo";
-      logo.src=BASE+"/assets/haddouche-logo.jpg?v=20260926-logo1";
-      logo.alt="شعار منصة حدوش للأدب والثقافة";
+      logo.src=BASE+"/assets/boumediene-haddouche-logo.png?v=20261003-logo3";
+      logo.alt="شعار منصة بومدين حدوش للأدب والثقافة";
       brand.prepend(logo);
     }
   }
