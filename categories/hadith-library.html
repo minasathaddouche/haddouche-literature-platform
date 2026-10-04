@@ -1,0 +1,82 @@
+<!doctype html><html lang="ar" dir="rtl"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>مكتبة الحديث | منصة بومدين حدوش للأدب والثقافة</title>
+<meta name="description" content="مكتبة الحديث في منصة بومدين حدوش للأدب والثقافة: بحث في الأحاديث المنشورة، وتصفح حسب الموضوع والمصدر، مع الإحالة إلى المراجع الموثوقة.">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="../assets/style.css?v=20261004-hadith1">
+</head><body>
+<header><div class="container"><nav><a class="brand" href="/haddouche-literature-platform/index.html"><span class="mark">ح</span><span><strong>منصة بومدين حدوش</strong><small>للأدب والثقافة</small></span></a><button class="menu-btn" aria-label="القائمة">☰</button><div class="links"></div></nav></div></header>
+<main><section class="page-hero"><div class="container">
+<div class="eyebrow">الثقافة الإسلامية</div>
+<h1>مكتبة الحديث</h1>
+<p>مساحة للبحث في الأحاديث المنشورة في المنصة، وتصنيفها بحسب الموضوع والمصدر، مع شرح مبسّط وإحالة واضحة إلى التخريج.</p>
+
+<div class="searchbox" style="margin:26px 0">
+<input id="hadith-search" type="search" placeholder="ابحث بكلمة: الصبر، الرحمة، العلم، النية..." aria-label="البحث في مكتبة الحديث">
+</div>
+
+<div class="section-head"><div><div class="eyebrow">تصفح سريع</div><h2>حسب الموضوع</h2></div></div>
+<div class="topic-cloud" id="topic-filters">
+<button class="topic-pill hadith-filter" data-q="الأخلاق">الأخلاق</button>
+<button class="topic-pill hadith-filter" data-q="الرحمة">الرحمة</button>
+<button class="topic-pill hadith-filter" data-q="الصبر">الصبر</button>
+<button class="topic-pill hadith-filter" data-q="العلم">العلم</button>
+<button class="topic-pill hadith-filter" data-q="النية">النية</button>
+<button class="topic-pill hadith-filter" data-q="الأسرة">الأسرة</button>
+<button class="topic-pill hadith-filter" data-q="">كل الأحاديث</button>
+</div>
+
+<div class="section-head" style="margin-top:34px"><div><div class="eyebrow">المصادر</div><h2>حسب المصدر</h2></div></div>
+<div class="topic-cloud">
+<button class="topic-pill hadith-filter" data-q="البخاري">صحيح البخاري</button>
+<button class="topic-pill hadith-filter" data-q="مسلم">صحيح مسلم</button>
+<button class="topic-pill hadith-filter" data-q="الترمذي">سنن الترمذي</button>
+<button class="topic-pill hadith-filter" data-q="أبو داود">سنن أبي داود</button>
+<button class="topic-pill hadith-filter" data-q="النسائي">سنن النسائي</button>
+</div>
+
+<div class="section-head" style="margin-top:38px"><div><div class="eyebrow">المكتبة</div><h2>الأحاديث المنشورة</h2></div></div>
+<div id="hadith-results"><div class="empty-state">جارٍ تحميل مكتبة الحديث…</div></div>
+
+<div class="reader-library-callout" style="margin-top:32px">
+<a class="card reader-library-card" href="https://sounah.com" target="_blank" rel="noopener noreferrer">
+<span class="tag">مرجع خارجي</span>
+<h3>Sounah.com</h3>
+<p>مرجع مساعد للبحث في كتب الحديث ومراجعة النصوص وبيانات التخريج قبل النشر.</p>
+<span class="read-more">فتح المرجع ←</span>
+</a>
+</div>
+</div></section></main>
+
+<footer><div class="container"><div class="copyright">© 2026 منصة بومدين حدوش للأدب والثقافة — جميع الحقوق محفوظة.</div></div></footer>
+
+<script>
+let HADITH_ITEMS=[];
+function norm(v){return (v||"").toString().toLowerCase().trim()}
+function renderHadith(q=""){
+ const box=document.getElementById("hadith-results");
+ const query=norm(q);
+ const list=HADITH_ITEMS.filter(a=>{
+   const hay=[a.title,a.excerpt,a.author,a.category,a.islamic_section,...(a.tags||[])].map(norm).join(" ");
+   return !query || hay.includes(query);
+ });
+ if(!list.length){
+   box.innerHTML='<div class="empty-state">لا توجد أحاديث مطابقة حاليًا. ستتوسع المكتبة تلقائيًا مع نشر مواد جديدة.</div>';
+   return;
+ }
+ box.innerHTML='<div class="grid">'+list.map(a=>'<a class="card" href="../articles/'+a.slug+'/index.html"><span class="tag">الحديث النبوي</span><h3>'+a.title+'</h3><p>'+a.excerpt+'</p><div class="meta"><span>'+a.author+'</span>'+(a.date?'<span>•</span><span>'+a.date+'</span>':'')+'</div></a>').join('')+'</div>';
+}
+fetch("../assets/articles.json").then(r=>r.json()).then(items=>{
+ HADITH_ITEMS=items.filter(a=>a.islamic_section==="الحديث النبوي" || (a.tags||[]).includes("الحديث النبوي"));
+ renderHadith("");
+}).catch(()=>document.getElementById("hadith-results").innerHTML='<div class="empty-state">تعذر تحميل مكتبة الحديث مؤقتًا.</div>');
+document.getElementById("hadith-search").addEventListener("input",e=>renderHadith(e.target.value));
+document.querySelectorAll(".hadith-filter").forEach(b=>b.addEventListener("click",()=>{
+ const q=b.dataset.q||"";
+ document.getElementById("hadith-search").value=q;
+ renderHadith(q);
+ document.getElementById("hadith-results").scrollIntoView({behavior:"smooth",block:"start"});
+}));
+</script>
+<script src="../assets/site.js"></script>
+</body></html>
