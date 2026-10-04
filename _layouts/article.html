@@ -3,15 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>{{ page.title }} | منصة حدوش للأدب والثقافة</title>
+  <title>{{ page.title }} | منصة بومدين حدوش للأدب والثقافة</title>
   <meta name="description" content="{{ page.excerpt | default: page.title | strip_html | escape }}">
   <meta name="robots" content="{% if page.published == false %}noindex,nofollow{% else %}index,follow{% endif %}">
-  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}"><link rel="alternate" type="application/rss+xml" title="منصة حدوش للأدب والثقافة" href="{{ site.url }}{{ site.baseurl }}/feed.xml"><meta property="og:type" content="article"><meta property="og:title" content="{{ page.title | escape }}"><meta property="og:description" content="{{ page.excerpt | default: page.title | strip_html | escape }}"><meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}"><meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/haddouche-logo.jpg">
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css?v=20260925-cms1">
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}"><link rel="alternate" type="application/rss+xml" title="منصة بومدين حدوش للأدب والثقافة" href="{{ site.url }}{{ site.baseurl }}/feed.xml"><meta property="og:type" content="article"><meta property="og:title" content="{{ page.title | escape }}"><meta property="og:description" content="{{ page.excerpt | default: page.title | strip_html | escape }}"><meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}"><meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/haddouche-logo.jpg">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css?v=20261004-authorviews1">
 </head>
 <body>
+{% assign writer = site.writers | where: "name", page.author | first %}
+{% assign counter_id = page.slug | default: page.title | slugify %}
 <header><div class="container"><nav>
-  <a class="brand" href="{{ site.baseurl }}/index.html"><span class="mark">ح</span><span><strong>منصة حدوش للأدب والثقافة</strong><small>حيث تجد الكلمة مكانها</small></span></a>
+  <a class="brand" href="{{ site.baseurl }}/index.html"><span class="mark">ح</span><span><strong>منصة بومدين حدوش</strong><small>للأدب والثقافة</small></span></a>
   <button class="menu-btn" aria-label="القائمة">☰</button><div class="links"></div>
 </nav></div></header>
 <main>
@@ -20,16 +22,56 @@
     <header class="article-head">
       <div class="eyebrow">{{ page.category | default: "نص أدبي" }}</div>
       <h1>{{ page.title }}</h1>
-      <div class="meta">
-        <span>{{ page.author }}</span>
+      <div class="meta article-meta">
+        {% if writer %}
+          <a class="article-author-link" href="{{ site.baseurl }}{{ writer.url }}">{{ page.author }}</a>
+        {% else %}
+          <span>{{ page.author }}</span>
+        {% endif %}
         {% if page.country %}<span>•</span><span>{{ page.country }}</span>{% endif %}
         {% if page.date %}<span>•</span><span>{{ page.date | date: "%Y-%m-%d" }}</span>{% endif %}
+        <span>•</span>
+        <span class="article-views"><span>القراءات</span>
+          <a href="https://counter.gratis/?ID=haddouche-{{ counter_id }}" target="_blank" rel="noopener noreferrer" aria-label="إحصاءات قراءات المقال">
+            <img src="https://besucherzaehler.gratis/counter.php?ID=haddouche-{{ counter_id }}&STYLE=0" id="article-view-counter" alt="عدد القراءات" title="عدد القراءات">
+          </a>
+        </span>
       </div>
     </header>
     <div class="article-body">{{ content }}</div>
+
+    {% if writer %}
+    <aside class="article-author-box" aria-label="عن الكاتب">
+      {% if writer.image %}
+        <a href="{{ site.baseurl }}{{ writer.url }}"><img class="article-author-photo" src="{{ writer.image }}" alt="صورة {{ writer.name }}" loading="lazy"></a>
+      {% else %}
+        <div class="article-author-avatar">{{ writer.initials | default: "ك" }}</div>
+      {% endif %}
+      <div>
+        <div class="eyebrow">عن الكاتب</div>
+        <h3><a href="{{ site.baseurl }}{{ writer.url }}">{{ writer.name }}</a></h3>
+        <p>{{ writer.bio }}</p>
+        <div class="meta"><span>{{ writer.country }}</span>{% if writer.city %}<span>•</span><span>{{ writer.city }}</span>{% endif %}{% if writer.role %}<span>•</span><span>{{ writer.role }}</span>{% endif %}</div>
+        <a class="author-more" href="{{ site.baseurl }}{{ writer.url }}">جميع أعمال الكاتب ←</a>
+      </div>
+    </aside>
+    {% endif %}
+
     <div class="share" aria-label="مشاركة النص"><strong class="share-label">شارك النص</strong><button onclick="sharePage()">مشاركة</button><button onclick="shareToFacebook()">Facebook</button><button onclick="shareToX()">X</button><button onclick="copyLink()">نسخ الرابط</button></div>
   </article>
 </main>
+<script>
+(function(){
+  var img=document.getElementById("article-view-counter");
+  if(!img) return;
+  var REF=encodeURIComponent(document.referrer);
+  var LOC=encodeURIComponent(window.location.href);
+  var RES=screen.width+"x"+screen.height;
+  var NAVI=encodeURIComponent(navigator.userAgent);
+  var LANG=navigator.language || "";
+  img.src="https://besucherzaehler.gratis/counter.php?ID=haddouche-{{ counter_id }}&STYLE=0&LANG="+encodeURIComponent(LANG)+"&RES="+RES+"&REF="+REF+"&LOC="+LOC+"&NAVI="+NAVI;
+})();
+</script>
 <script src="{{ site.baseurl }}/assets/site.js"></script>
 </body>
 </html>
