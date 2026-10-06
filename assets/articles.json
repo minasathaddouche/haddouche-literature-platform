@@ -7,6 +7,7 @@
     "slug": {{ a.slug | default: a.basename_without_ext | jsonify }},
     "excerpt": {{ a.excerpt | default: "" | strip_html | jsonify }},
     "author": {{ a.author | default: "" | jsonify }},
+    "subject_author": {{ a.subject_author | default: "" | jsonify }},
     "country": {{ a.country | default: "" | jsonify }},
     "category": {{ a.category | default: "" | jsonify }},
     "islamic_section": {{ a.islamic_section | default: "" | jsonify }},

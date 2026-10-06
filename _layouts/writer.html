@@ -24,6 +24,8 @@
     <div><div class="eyebrow">{{ page.role | default: "كاتب" }}</div><h1>{{ page.name }}</h1><p>{{ page.bio }}</p>
     <div class="meta"><span>{{ page.country }}</span>{% if page.city %}<span>•</span><span>{{ page.city }}</span>{% endif %}</div></div>
   </div>
+  {% if content != empty %}<div class="prose" style="margin-top:28px">{{ content }}</div>{% endif %}
+  {% assign related = site.articles | where: "subject_author", page.name %}
   {% assign authored = site.articles | where: "author", page.name %}
   {% if authored.size > 0 %}
   <div class="grid" style="margin-top:28px">
@@ -35,8 +37,21 @@
     </a>
     {% endfor %}
   </div>
-  {% else %}
+  {% elsif related.size == 0 %}
   <div class="empty-state" style="margin-top:28px">لا توجد نصوص منشورة لهذا الكاتب حاليًا.</div>
+  {% endif %}
+  {% if related.size > 0 %}
+  <h2 style="margin-top:28px">قراءات حول أعماله</h2>
+  <div class="grid">
+    {% for article in related reversed %}
+    <a class="card" href="{{ site.baseurl }}{{ article.url }}">
+      <span class="tag">قراءة تحريرية</span>
+      <h3>{{ article.title }}</h3>
+      <p>{{ article.excerpt }}</p>
+      <p class="meta">إعداد: {{ article.author }}</p>
+    </a>
+    {% endfor %}
+  </div>
   {% endif %}
 </div></section></main>
 <script src="{{ site.baseurl }}/assets/site.js"></script>

@@ -11,6 +11,7 @@ Promise.all([
   }
   box.innerHTML='<div class="writers-grid">'+writers.map(w=>{
     const count=articles.filter(a=>a.author===w.name).length;
+    const readings=articles.filter(a=>a.subject_author===w.name).length;
     const image=w.image
       ? '<img class="writer-index-photo" src="'+w.image+'" alt="صورة '+w.name+'" loading="lazy">'
       : '<div class="writer-index-fallback">'+(w.name ? w.name.trim().charAt(0) : 'ك')+'</div>';
@@ -20,7 +21,7 @@ Promise.all([
         '<span class="tag">'+(w.country||'')+'</span>'+
         '<h3>'+w.name+'</h3>'+
         '<p><strong>'+(w.role||'كاتب')+'</strong> — '+(w.bio||'')+'</p>'+
-        '<div class="meta"><span>'+count+' نص منشور</span>'+(w.city?'<span>•</span><span>'+w.city+'</span>':'')+'</div>'+
+        '<div class="meta"><span>'+count+' نص منشور'+(readings?' • '+readings+' قراءة حول أعماله':'')+'</span>'+(w.city?'<span>•</span><span>'+w.city+'</span>':'')+'</div>'+
       '</div>'+
     '</a>';
   }).join('')+'</div>';
